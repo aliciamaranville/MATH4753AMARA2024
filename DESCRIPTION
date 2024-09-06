@@ -1,0 +1,11 @@
+Package: MATH4753AMARA2024
+Type: Package
+Title: R functions from the labs
+Version: 0.1.0
+Author: Alicia Maranville
+Maintainer: Alicia Maranville <alicia.d.maranville-1@ou.edu>
+Description: MATH 4753 functions detailed from labs.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
