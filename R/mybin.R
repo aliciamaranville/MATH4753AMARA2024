@@ -3,6 +3,8 @@
 #' @param iter number of experiments to perform
 #' @param n number of trials to conduct per experiment
 #' @param p probability of success
+#' @importFrom graphics barplot
+#' @importFrom grDevices rainbow
 #'
 #' @return prints a barplot and success table
 #' @export
@@ -11,7 +13,7 @@
 #' mybin()
 mybin=function(iter=100,n=10, p=0.7) {
   # make a empty matrix to hold the samples
-  sam.mat=matrix(NA,nr=n,nc=iter, byrow=TRUE)
+  sam.mat=matrix(NA,nrow=n,ncol=iter, byrow=TRUE)
 
   # vector to hold the number of successes in each trial
   succ=c()

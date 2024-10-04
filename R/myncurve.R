@@ -3,12 +3,15 @@
 #' @param mu mean of distribution
 #' @param sigma standard deviation of distribution
 #' @param a probability value in P(X<=a)
+#' @importFrom graphics curve polygon
+#' @importFrom stats dnorm pnorm
 #'
 #' @return graph with shaded curve and list of mu, sigma, and probability
 #' @export
 #'
 #' @examples myncurve(0,1,0)
 myncurve = function(mu, sigma, a) {
+  x <- NULL
   curve(dnorm(x,mean=mu, sd=sigma), xlim=c(mu-3*sigma, mu+3*sigma))
   xcurve <- seq(mu-3*sigma, a, length=1000)
   ycurve <- dnorm(xcurve, mean=mu, sd=sigma)
