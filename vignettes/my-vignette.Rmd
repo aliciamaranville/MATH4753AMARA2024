@@ -1,0 +1,41 @@
+---
+title: "my-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753AMARA2024)
+```
+
+# First Function: In class
+
+We created a function to calculate the square of a vector of numbers in class. This was the first function added to the package.
+
+In the next example, we are squaring each element of the vector [1:10] = [ 1 2 3 4 5 6 7 8 9 10 ]
+
+```{r}
+mysquare(1:10)
+```
+
+# NEED TO UPDATE FOR FUNCTIONS myf, mybin
+
+# Lab 6: Normal Distribution Probability
+
+The myncurve(mu, sigma, a) function displays the curve, shaded area between the curve and x axis from -∞ to x=a, and calculates the area (i.e. probability P(X \<= a)), which is released to the command-line in a list along with the mean (mu) and standard deviation (sigma). This is all for a normal distribution.
+
+In this example, the function is Y \~ N(10, 5), P(X \<= 6)
+
+```{r}
+myncurve(mu=10, sigma=5, a=6)
+```
