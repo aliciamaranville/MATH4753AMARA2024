@@ -33,12 +33,12 @@ ntickets = function(N, gamma, p) {
   layout(matrix(1:2, nrow=2, ncol=1))
 
   x <- seq(N,N*1.1, by=1)
-  plot(x, y=fd(x), type = "b", pch = 16, col = "navy", main = "Objective Vs n to find optimal tickets sold\n (205) gamma=0.02 N=200 discrete", xlab = "n", ylab = "Objective")
+  plot(x, y=fd(x), type = "b", pch = 16, col = "navy", main = paste("Objective Vs n to find optimal tickets sold\n (",nd,") gamma=,",gamma," N=",N," discrete", sep=""), xlab = "n", ylab = "Objective")
   abline(h = 0, col = "red", lwd = 2)
   abline(v = nd, col = "red", lwd = 2)
 
   # continuous plot
-  curve(1-gamma-pnorm(q=N+0.5, mean=x*p, sd=sqrt(x*p*(1-p))), xlim=c(N,N*1.1), main="Objective Vs n to find optimal tickets sold\n (204.3178) gamma=0.02 N=200 continuous", xlab = "n", ylab = "Objective")
+  curve(1-gamma-pnorm(q=N+0.5, mean=x*p, sd=sqrt(x*p*(1-p))), xlim=c(N,N*1.1), main=paste("Objective Vs n to find optimal tickets sold\n (",nc,") gamma=",gamma," N=",N," continuous",sep=""), xlab = "n", ylab = "Objective")
   abline(h = 0)
   abline(v = nc)
 }
