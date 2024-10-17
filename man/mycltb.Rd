@@ -14,7 +14,7 @@ mycltb(n, iter, p = 0.5)
 \item{p}{probability of success on a single trial}
 }
 \value{
-vector of sample means and histogram of sample means distribution
+histogram of sample means distribution
 }
 \description{
 Lab 8 Central Limit Theorem for Binomial Distribution

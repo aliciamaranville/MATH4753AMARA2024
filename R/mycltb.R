@@ -6,7 +6,7 @@
 #' @importFrom stats rbinom density
 #' @importFrom graphics hist lines
 #'
-#' @return vector of sample means and histogram of sample means distribution
+#' @return histogram of sample means distribution
 #' @export
 #'
 #' @examples mycltb(n=10,iter=10000,p=0.3)
@@ -23,5 +23,4 @@ mycltb=function(n,iter,p=0.5){
        xlab="Sample mean") # create histogram
   lines(density(w),col="Blue",lwd=3) # sample density curve
   curve(dnorm(x,mean=n*p,sd=sqrt(p*(1-p))),add=TRUE,col="Red",lty=2,lwd=3) # normal distribution curve according to CLT
-  w
 }
