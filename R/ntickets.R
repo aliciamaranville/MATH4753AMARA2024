@@ -1,4 +1,4 @@
-#' Project 1 Overbooking Problem
+#' Project 1 Overbooking Problem to find Optimal Tickets Sold
 #'
 #' @param N number of seats in the flight
 #' @param gamma probability of plane being overbooked
@@ -6,7 +6,7 @@
 #' @importFrom graphics abline layout
 #' @importFrom stats pbinom uniroot
 #'
-#' @return named list with discrete and continuous and 2 plots
+#' @return named list and 2 plots giving optimal tickets sold (discrete and continuous)
 #' @export
 #'
 #' @examples ntickets(N=200, gamma=0.02, p=0.95)

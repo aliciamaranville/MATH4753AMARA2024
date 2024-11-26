@@ -2,7 +2,7 @@
 % Please edit documentation in R/ntickets.R
 \name{ntickets}
 \alias{ntickets}
-\title{Project 1 Overbooking Problem}
+\title{Project 1 Overbooking Problem to find Optimal Tickets Sold}
 \usage{
 ntickets(N, gamma, p)
 }
@@ -14,10 +14,10 @@ ntickets(N, gamma, p)
 \item{p}{probability of a 'show'}
 }
 \value{
-named list with discrete and continuous and 2 plots
+named list and 2 plots giving optimal tickets sold (discrete and continuous)
 }
 \description{
-Project 1 Overbooking Problem
+Project 1 Overbooking Problem to find Optimal Tickets Sold
 }
 \examples{
 ntickets(N=200, gamma=0.02, p=0.95)

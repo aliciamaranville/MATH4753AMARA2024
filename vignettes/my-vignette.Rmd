@@ -28,7 +28,14 @@ In the next example, we are squaring each element of the vector [1:10] = [ 1 2 3
 mysquare(1:10)
 ```
 
-# NEED TO UPDATE FOR FUNCTIONS myf, mybin
+# Lab 5 Function: Binomial experiment simulation
+
+The mybin(iter, n, p) function simulates a binomial experiment and visualizes the results. It iterates over iter # of experiments where n trails are generated in each experiment, and the number of successes per experiment are stored. A table of the number of successes across all experiements is outputted along with a barplot showing the proportions of each possible number of successes (from 0 to n). 
+
+```{r}
+mybin()
+```
+
 
 # Lab 6: Normal Distribution Probability
 
@@ -39,3 +46,56 @@ In this example, the function is Y \~ N(10, 5), P(X \<= 6)
 ```{r}
 myncurve(mu=10, sigma=5, a=6)
 ```
+
+# Piecewise Linear Regression
+
+The myf function computes the value of a piecewise linear regression at a given value of x given you provide the x to evaluate at, the knot point xk, and a vector of coefficients (first is intercept, second is slope for x, third is slope adjustment for values of x greater than xk). It outputs the value of the piecewise regression.
+
+```{r}
+myf(0, 18, coef=c(6.2188237,0.6741809,-0.5803229))
+```
+
+# Lab 8 Central Limit Theorem for Binomial Distribution
+
+The function mycltb demonstrates the Central Limit Theorem for the binomial distribution. It generates iter samples of size n from a binomial distribution using rbinom function, calcualtes the mean of each sample for each iteration, and creates a histogram of the sample means.It compares the histogram to the expected normal distribution from the CLT, which approximates the distribution of the sample means as a normal distribution with mean $n*p$ and standard deviation $\sqrt{n*p*(1-p)}$.
+
+```{r}
+mycltb(n=10,iter=10000,p=0.3)
+```
+
+# Lab 9 Bootstrap Confidence Interval Histogram
+
+The function myboot2 performs a bootstrap analysis to create a histogram of the bootstrap sample statistics and calculate a confidence interval. The function generates iter bootstrap samples by resampling the data x with replacement.
+For each bootstrap sample, it calculates the statistic (mean by default) using the specified function fun.
+It then calculates the confidence interval (CI) using the quantile function, which returns the values corresponding to the lower and upper percentiles defined by alpha.
+The function returns a histogram of the bootstrap sample statistics, with the point estimate and confidence interval marked.
+It also returns a list containing the confidence interval, function used, original data, bootstrap sample statistics, and point estimate.
+
+```{r}
+myboot2(x=c(1,1,1,2,2,2,2,3,3,4,4,4))
+```
+
+# Project 1 Overbooking Problem to find Optimal Tickets Sold
+
+
+The function ntickets solves the overbooking problem by finding the optimal number of tickets to sell for a flight to minimize the probability of overbooking, using both discrete (binomial) and continuous (normal) models. 
+
+The function fd(n) calculates the probability of overbooking for different values of n (number of tickets sold). It finds the smallest n where the probability of overbooking is less than or equal to gamma.
+
+The function fc(x) uses a normal distribution approximation to find the optimal n that minimizes overbooking risk, using the mean and standard deviation of the number of show-ups.
+
+The function prints a list with the optimal number of tickets for both the discrete (nd) and continuous (nc) models, along with the input parameters.
+
+Two plots are created:
+A plot showing the discrete objective function (overbooking probability) versus the number of tickets sold (n).
+A plot for the continuous model, using the normal approximation, showing the same objective.
+
+
+# Lab 11 Confidence Interval for mu given single sample x
+
+The function myci calculates the 95% confidence interval for the mean (mu) of a population based on a single sample x. The function calculates the sample size n and the t-distribution critical value t for a 95% confidence level using the qt function. It then computes the ci using $CI=(\bar{x}-t\frac{sd(x)}{\sqrt(n)},\bar{x}+t\frac{sd(x)}{\sqrt(n)})$
+
+```{r}
+myci(x = rnorm(30,mean=10,sd=12))
+```
+
